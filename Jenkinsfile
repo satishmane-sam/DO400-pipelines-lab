@@ -27,7 +27,7 @@ pipeline {
 		    steps {
 			script {
 			  try {
-				sh './mvnw pachage -D skipTests'
+				sh './mvnw package -D skipTests'
 		} catch (ex) { 
 				echo "Eroor while generating JAR File"
 				throw ex
