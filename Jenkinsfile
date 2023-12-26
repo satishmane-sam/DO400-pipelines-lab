@@ -23,6 +23,16 @@ pipeline {
                         sh './mvnw test -D testGroups=integration'
                     }
                 }
+		stage('Build') {
+		    steps {
+			script {
+			  try {
+				sh './mvnw pachage -D skipTests'
+		} catch (ex) { 
+				echo "Eroor while generating JAR File"
+				throw ex
+		    }
+		}
             }
         }
     }
